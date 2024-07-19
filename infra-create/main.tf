@@ -16,6 +16,7 @@ resource "aws_security_group" "tool-sg" {
     protocol = "-1"
     ipv6_cidr_blocks = ["::/0"]
     cidr_blocks = ["0.0.0.0/0"]
+    
   }
   ingress {
     from_port = 22
