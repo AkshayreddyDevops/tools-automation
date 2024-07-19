@@ -1,0 +1,8 @@
+name: Provision tool infra
+on: [push,workflow_dispatch]
+jobs:
+  Provision:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: tarraform init
