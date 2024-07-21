@@ -1,0 +1,8 @@
+name: create provision tool infra
+on: [push]
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    steps:
+      - users: actions/checkout@v4
+      - run: terraform init 
