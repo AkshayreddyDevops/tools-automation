@@ -2,6 +2,7 @@ resource "aws_instance" "test"{
   ami = "ami-041e2ea9402c46c32"
   vpc_security_group_ids = [aws_security_group.sg.id]
   instance_type = var.instance_type
+  iam_instance_profile = aws_iam_instance_profile.instance-profile.name
   tags = {
     Name = "${var.name}"
   }
