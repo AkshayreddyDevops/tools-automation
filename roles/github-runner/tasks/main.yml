@@ -29,5 +29,13 @@
 
 - name: Print Token
   ansible.builtin.debug:
-    msg: "{{ out }}"    
+    msg: "{{ out }}" 
+ 
+- name: install libicu dependence 
+  ansible.builtin.dnf:
+    name: libicu
+    state: latest
+
+- name: config github Runner
+  ansible.builtin.shell: ./config.sh --url https://github.com/AkshayreddyDevops --token BJR6Q2JTYOV3LG2U5N7CMXDGTYPA2 --runnergroup Default --name ec2 --lables rhel --work _work --replace  
 
