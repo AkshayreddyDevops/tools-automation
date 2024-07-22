@@ -10,7 +10,7 @@
     path: /actions-runner
     state: directory
     owner: grunner
-    group: grunner
+    group: ec2-user
   
 - name: Download & Extract Runner
   ansible.builtin.unarchive:
@@ -18,7 +18,7 @@
     dest: /actions-runner
     remote_src: yes
     owner: grunner
-    group: grunner
+    group: ec2-user
 
 - name: Download Github CLI
   ansible.builtin.get_url:
