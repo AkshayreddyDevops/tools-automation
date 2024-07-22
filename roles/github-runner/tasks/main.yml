@@ -13,7 +13,7 @@
     remote_src: yes
 
 - name: Download Github CLI
-  ansible.builtin.git_url:
+  ansible.builtin.get_url:
     src: https://cli.github.com/packages/rpm/gh-cli.repo
     dest: /etc/yum.repo.d/gh-cli.repo
 
