@@ -2,7 +2,7 @@ name: create provision tool infra
 on: [push]
 jobs:
   dev:
-    runs-on: rhel
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - run: terraform init -backend-config=state.tf
