@@ -2,7 +2,7 @@ name: create provision tool infra
 on: [workflow_dispatch]
 jobs:
   dev:
-    runs-on: self-hosted
+    runs-on: rhel
     steps:
       - uses: actions/checkout@v4
       - run: terraform init -backend-config=state.tf
