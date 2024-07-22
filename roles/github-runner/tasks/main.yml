@@ -1,5 +1,5 @@
 - name: setup prompt
-  ansible.builtin.shell: setup-prompt gethub-runner
+  ansible.builtin.shell: set-prompt gethub-runner
 
 - name: github dir
   ansible.builtin.file:
