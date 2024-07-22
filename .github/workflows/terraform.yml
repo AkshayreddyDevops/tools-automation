@@ -3,6 +3,12 @@ on: [workflow_dispatch]
 jobs:
   dev:
     runs-on: self-hosted
+    environment: "dev"
     steps:
       - uses: actions/checkout@v4
-      - run: terraform init 
+      - name: Terraform init
+        run: terraform init 
+      - name: Terraform apply
+        run: terraform apply -auto-approve
+        
+
