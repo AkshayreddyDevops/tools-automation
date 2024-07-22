@@ -1,8 +1,8 @@
 name: create provision tool infra
-on: [push]
+on: [workflow_dispatch]
 jobs:
-  provision:
-    runs-on: ubuntu-latest
+  dev:
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      - run: terraform init 
+      - run: terraform init -backend-config=state.tf

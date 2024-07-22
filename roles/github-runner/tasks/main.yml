@@ -51,4 +51,12 @@
     ./config.sh --url https://github.com/AkshayreddyDevops --token BJR6Q2NOR5O66ITTNUQX2HTGTYYNS --runnergroup Default --name ec2 --labels rhel --work _work --replace  
   args: 
     chdir: /actions-runner
+  
+- name: config github Runner
+  become_user: "grunner"
+  ansible.builtin.shell: |
+    ./svc.sh install grunner; ./svc.sh start
+  args:
+    chdir: /actions-runner
+
 
