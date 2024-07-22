@@ -1,7 +1,6 @@
 resource "aws_instance" "test"{
-  depends_on = [ aws_security_group.sg ]
   ami = "ami-041e2ea9402c46c32"
-  vpc_security_group_ids = [aws_security_groups.sg.id]
+  vpc_security_group_ids = [aws_security_group.sg.id]
   instance_type = var.instance_type
   tags = {
     Name = "test"
