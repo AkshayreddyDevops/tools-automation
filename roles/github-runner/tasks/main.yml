@@ -19,7 +19,7 @@
 
 - name: install github cli
   ansible.builtin.dnf:
-    name: gh --repo gh-cli
+    name: gh
     state: latest
 
 - name: Grab Token
