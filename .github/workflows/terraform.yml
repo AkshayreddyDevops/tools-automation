@@ -1,5 +1,5 @@
 name: create provision tool infra
-on: [workflow_dispatch]
+on: [push]
 jobs:
   dev:
     runs-on: rhel
