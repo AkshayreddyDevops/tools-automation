@@ -4,7 +4,7 @@ resource "aws_instance" "tools"{
   instance_type = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.instance-profile.name
   instance_market_options {
-    market_type = spot_options
+    market_type = "spot"
     spot_options {
       instance_interruption_behavior = "stop"
       spot_instance_type = "persistent"
