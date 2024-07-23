@@ -45,3 +45,6 @@ resource "aws_security_group" "sg" {
 #   ttl     = 300
 #   records = [aws_eip.lb.public_ip]
 # }
+output "test" {
+  value = data.aws_instance.foo
+}
