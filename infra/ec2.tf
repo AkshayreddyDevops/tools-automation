@@ -1,8 +1,15 @@
-resource "aws_instance" "test"{
+resource "aws_instance" "tools"{
   ami = "ami-041e2ea9402c46c32"
   vpc_security_group_ids = [aws_security_group.sg.id]
   instance_type = var.instance_type
   iam_instance_profile = aws_iam_instance_profile.instance-profile.name
+  instance_market_options {
+    market_type = spot_options
+    spot_options {
+      instance_interruption_behavior = "stop"
+      spot_instance_type = "persistent"
+    }
+  }
   tags = {
     Name = "${var.name}"
   }
