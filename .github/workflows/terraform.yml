@@ -1,14 +1,26 @@
+# name: create provision tool infra
+# on: [workflow_dispatch]
+# jobs:
+#   dev:
+#     runs-on: self-hosted
+#     environment: "dev"
+#     steps:
+#       - uses: actions/checkout@v4
+#       - name: Terraform init
+#         run: terraform init 
+#       - name: Terraform apply
+#         run: terraform apply -auto-approve
+        
 name: create provision tool infra
 on: [workflow_dispatch]
 jobs:
-  dev:
+  build:
     runs-on: self-hosted
-    environment: "dev"
+    env:
+      NODE_ENV: "dev"
     steps:
       - uses: actions/checkout@v4
       - name: Terraform init
         run: terraform init 
       - name: Terraform apply
         run: terraform apply -auto-approve
-        
-
